@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValueMart | Save money. Live better.</title>
+  <meta name="description" content="A front-end study clone of a big-box retailer homepage layout. Not affiliated with any real retailer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-main">
+      <a href="#" class="logo" aria-label="ValueMart home">
+        <svg viewBox="0 0 40 40" class="logo-mark" aria-hidden="true">
+          <g fill="#ffc220">
+            <circle cx="20" cy="20" r="5"/>
+            <rect x="18" y="2" width="4" height="10" rx="2"/>
+            <rect x="18" y="28" width="4" height="10" rx="2"/>
+            <rect x="2" y="18" width="10" height="4" rx="2"/>
+            <rect x="28" y="18" width="10" height="4" rx="2"/>
+          </g>
+        </svg>
+        <span class="logo-text">ValueMart</span>
+      </a>
+
+      <button class="pickup-btn" type="button">
+        <span class="pickup-icon">🏬</span>
+        <span class="pickup-text">
+          <strong>Pickup or delivery?</strong>
+          <small>Sacramento, 95829 • Sacramento Supercenter</small>
+        </span>
+        <span class="chev">▾</span>
+      </button>
+
+      <form class="search" role="search" onsubmit="return false">
+        <input type="search" id="search-input" placeholder="Search everything at ValueMart online and in store" aria-label="Search">
+        <button type="submit" class="search-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+
+      <nav class="header-actions">
+        <a href="#" class="action">
+          <span class="action-icon">♡</span>
+          <span><small>Reorder</small><strong>My Items</strong></span>
+        </a>
+        <a href="#" class="action">
+          <span class="action-icon">👤</span>
+          <span><small>Sign In</small><strong>Account</strong></span>
+        </a>
+        <a href="#" class="action cart" aria-label="Cart">
+          <span class="cart-icon">🛒<span class="cart-count" id="cart-count">0</span></span>
+          <strong id="cart-total">$0.00</strong>
+        </a>
+      </nav>
+    </div>
+
+    <div class="subnav">
+      <div class="subnav-inner">
+        <button class="subnav-menu" type="button">▦ Departments ▾</button>
+        <button class="subnav-menu" type="button">⚙ Services ▾</button>
+        <span class="divider"></span>
+        <ul class="subnav-links">
+          <li><a href="#">Get it Fast</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Rollbacks &amp; More</a></li>
+          <li><a href="#">Flash Deals</a></li>
+          <li><a href="#">Halloween</a></li>
+          <li><a href="#">Back to School</a></li>
+          <li><a href="#">Grocery &amp; Essentials</a></li>
+          <li><a href="#">Fall Decor</a></li>
+          <li><a href="#">Pharmacy Delivery</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">ValueMart+</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- ===== Category pills ===== -->
+    <section class="pills" aria-label="Shop by category" id="pills"></section>
+
+    <!-- ===== Hero grid ===== -->
+    <section class="hero-grid">
+      <article class="tile tile-tall tile-blue">
+        <div>
+          <p class="eyebrow">Fall must-haves</p>
+          <h2>Cozy up for less</h2>
+          <a href="#" class="link">Shop now</a>
+        </div>
+        <div class="tile-art">🍂🧣🕯️</div>
+      </article>
+
+      <article class="tile tile-hero">
+        <div class="carousel" id="hero-carousel">
+          <div class="slide active" style="--slide-bg:#fff3d6">
+            <div>
+              <p class="eyebrow">Premium vitamins</p>
+              <h2>Feel your best, every day</h2>
+              <p>Wellness picks from trusted brands.</p>
+              <a href="#" class="btn">Shop now</a>
+            </div>
+            <div class="slide-art">💊🍊</div>
+          </div>
+          <div class="slide" style="--slide-bg:#e3f1ff">
+            <div>
+              <p class="eyebrow">Rollbacks &amp; more</p>
+              <h2>Thousands of savings, all season</h2>
+              <p>Low prices on the things you love.</p>
+              <a href="#" class="btn">Explore deals</a>
+            </div>
+            <div class="slide-art">🏷️📺</div>
+          </div>
+          <div class="slide" style="--slide-bg:#eaf7ea">
+            <div>
+              <p class="eyebrow">Fresh produce</p>
+              <h2>Farm-fresh, delivered today</h2>
+              <p>Freshness guaranteed or your money back.</p>
+              <a href="#" class="btn">Start shopping</a>
+            </div>
+            <div class="slide-art">🥑🍓🥕</div>
+          </div>
+          <button class="car-btn prev" aria-label="Previous slide">‹</button>
+          <button class="car-btn next" aria-label="Next slide">›</button>
+          <div class="dots" id="hero-dots"></div>
+        </div>
+      </article>
+
+      <article class="tile tile-tall tile-pink">
+        <div>
+          <p class="eyebrow">Young adult</p>
+          <h2>New arrivals, fresh fits</h2>
+          <a href="#" class="link">Shop fashion</a>
+        </div>
+        <div class="tile-art">👟🧥👜</div>
+      </article>
+
+      <article class="tile tile-sm">
+        <h3>Protein &amp; preworkout</h3>
+        <a href="#" class="link">Shop now</a>
+        <div class="tile-art sm">🏋️🥤</div>
+      </article>
+      <article class="tile tile-sm tile-green">
+        <h3>Clean like you mean it</h3>
+        <a href="#" class="link">Shop cleaning</a>
+        <div class="tile-art sm">🧽🧴</div>
+      </article>
+      <article class="tile tile-sm">
+        <h3>Baby health care</h3>
+        <a href="#" class="link">Shop baby</a>
+        <div class="tile-art sm">🍼🧸</div>
+      </article>
+      <article class="tile tile-sm tile-yellow">
+        <h3>Prep for your getaway</h3>
+        <a href="#" class="link">Shop travel</a>
+        <div class="tile-art sm">🧳✈️</div>
+      </article>
+    </section>
+
+    <!-- ===== Flash deals ===== -->
+    <section class="shelf">
+      <div class="shelf-head">
+        <div>
+          <h2>Flash Deals</h2>
+          <p class="muted">Up to 65% off · Ends in <span id="countdown">--:--:--</span></p>
+        </div>
+        <a href="#" class="link">View all</a>
+      </div>
+      <div class="shelf-track-wrap">
+        <button class="shelf-btn prev" data-target="deals-track" aria-label="Scroll left">‹</button>
+        <div class="shelf-track" id="deals-track"></div>
+        <button class="shelf-btn next" data-target="deals-track" aria-label="Scroll right">›</button>
+      </div>
+    </section>
+
+    <!-- ===== Banner ===== -->
+    <section class="banner">
+      <div>
+        <p class="eyebrow light">Members save more</p>
+        <h2>Try ValueMart+ free for 30 days</h2>
+        <p>Free delivery from your store, member prices on fuel, and more.</p>
+      </div>
+      <a href="#" class="btn btn-yellow">Start free trial</a>
+    </section>
+
+    <!-- ===== Popular shops ===== -->
+    <section class="shelf">
+      <div class="shelf-head"><h2>Popular shops near you</h2></div>
+      <div class="circles" id="circles"></div>
+    </section>
+
+    <!-- ===== Brands for you ===== -->
+    <section class="shelf">
+      <div class="shelf-head">
+        <div>
+          <h2>Picks for you</h2>
+          <p class="muted">Based on what's trending in your area</p>
+        </div>
+        <a href="#" class="link">View all</a>
+      </div>
+      <div class="shelf-track-wrap">
+        <button class="shelf-btn prev" data-target="picks-track" aria-label="Scroll left">‹</button>
+        <div class="shelf-track" id="picks-track"></div>
+        <button class="shelf-btn next" data-target="picks-track" aria-label="Scroll right">›</button>
+      </div>
+    </section>
+
+    <!-- ===== Two-up promos ===== -->
+    <section class="two-up">
+      <article class="tile tile-blue">
+        <div>
+          <p class="eyebrow">Pharmacy</p>
+          <h2>Prescriptions delivered</h2>
+          <p>Get refills delivered in as soon as 1 hour.</p>
+          <a href="#" class="link">Learn more</a>
+        </div>
+        <div class="tile-art">💊📦</div>
+      </article>
+      <article class="tile tile-yellow">
+        <div>
+          <p class="eyebrow">Stay warm</p>
+          <h2>Heaters &amp; more</h2>
+          <p>Get ahead of the chill with low prices.</p>
+          <a href="#" class="link">Shop heaters</a>
+        </div>
+        <div class="tile-art">🔥🪟</div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="feedback">
+      <p>We'd love to hear what you think!</p>
+      <button type="button" class="btn btn-outline">Give feedback</button>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">All Departments</a></li>
+        <li><a href="#">Store Directory</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Our Company</a></li>
+        <li><a href="#">Sell on ValueMart</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Product Recalls</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Tax Exempt Program</a></li>
+        <li><a href="#">Get the ValueMart App</a></li>
+        <li><a href="#">Safety Data Sheet</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Notice</a></li>
+        <li><a href="#">Your Privacy Choices</a></li>
+        <li><a href="#">Notice at Collection</a></li>
+        <li><a href="#">Request My Personal Information</a></li>
+        <li><a href="#">Brand Shop Directory</a></li>
+      </ul>
+      <p class="copyright">© 2026 ValueMart (demo). A front-end study clone — not a real store.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
